@@ -21,5 +21,7 @@ public interface CarFeignClient {
 	@GetMapping("/car/byuser/{userId}")
 	List<Car> getCars(@PathVariable("userId") int userId);
 	
+	void sout();
+	
 
 }
