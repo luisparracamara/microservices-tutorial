@@ -88,6 +88,7 @@ public class UserController {
 		return ResponseEntity.ok(car);
 	}
 	
+	/**
 	@PostMapping("/savebike/{userId}")
 	public ResponseEntity<Bike> saveBike(@PathVariable("userId") int userId, @RequestBody Bike bike ){
 		
@@ -107,5 +108,6 @@ public class UserController {
 		return ResponseEntity.ok(result);
 		
 	}
+	*/
 
 }

@@ -25,11 +25,14 @@ public class UserService {
 	@Autowired
 	RestTemplate rt;
 	
+	
 	@Autowired
 	CarFeignClient carFeignClient;
 	
+	/**
 	@Autowired
 	BikeFeignClient bikeFeignClient;
+	*/
 
 	
 	public List<User> getAll() {
@@ -61,6 +64,7 @@ public class UserService {
 		return carNew;	
 	}
 	
+	/**
 	public Bike saveBike(int userId, Bike bike) {
 		bike.setUserId(userId);
 		Bike bikeNew = bikeFeignClient.save(bike);
@@ -100,6 +104,6 @@ public class UserService {
 		return result;
 		
 	}
-	
+	*/
 	
 }
