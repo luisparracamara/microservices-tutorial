@@ -29,10 +29,10 @@ public class UserService {
 	@Autowired
 	CarFeignClient carFeignClient;
 	
-	/**
+	
 	@Autowired
 	BikeFeignClient bikeFeignClient;
-	*/
+	
 
 	
 	public List<User> getAll() {
@@ -48,12 +48,14 @@ public class UserService {
 	}
 	
 	public List<Car> getCars(int id){
-		List<Car> cars = rt.getForObject("http://localhost:8002/car/byuser/"+id, List.class);
+		//List<Car> cars = rt.getForObject("http://localhost:8002/car/byuser/"+id, List.class);
+		List<Car> cars = rt.getForObject("http://car-service/car/byuser/"+id, List.class);
 		return cars;
 	}
 	
 	public List<Bike> getBikes(int id){
-		List<Bike> bikes = rt.getForObject("http://localhost:8003/bike/byuser/"+id, List.class);
+		//List<Bike> bikes = rt.getForObject("http://localhost:8003/bike/byuser/"+id, List.class);
+		List<Bike> bikes = rt.getForObject("http://bike-service/bike/byuser/"+id, List.class);
 		return bikes;
 	}
 	
@@ -64,7 +66,7 @@ public class UserService {
 		return carNew;	
 	}
 	
-	/**
+	
 	public Bike saveBike(int userId, Bike bike) {
 		bike.setUserId(userId);
 		Bike bikeNew = bikeFeignClient.save(bike);
@@ -104,6 +106,6 @@ public class UserService {
 		return result;
 		
 	}
-	*/
+	
 	
 }
