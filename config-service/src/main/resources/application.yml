@@ -2,7 +2,7 @@ server:
   port: 8081
 spring:  cloud:    config:      server:        git:
           username: luisparracamara
-          password: cocoritsonora14          default-label: main
+          password: cocoritsonora14          default-label: eureka
           uri: https://github.com/luisparracamara/microservices-tutorial
           search-paths:          - config-data
   
